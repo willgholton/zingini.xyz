@@ -1,0 +1,2 @@
+# zingini.xyz
+the funny
