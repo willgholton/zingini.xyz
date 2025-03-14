@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'PressStart2P';
-    src: url('https://github.com/willgholton/zingini.xyz/raw/refs/heads/main/PressStart2P.ttf') format('truetype');
+    src: url('https://cdn.jsdelivr.net/gh/willgholton/zingini.xyz/PressStart2P.ttf') format('truetype');
 }
 
 body {
     background-color: black;
     color: #ffae42;
-    font-family: monospace, sans-serif;
+    font-family: 'PressStart2P', sans-serif;
     text-align: center;
     margin: 0;
     overflow-x: hidden;
