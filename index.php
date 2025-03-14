@@ -17,7 +17,7 @@
 
 
 <div id="home" class="section active">
-    <h1 class="title">zingoonerland</h1>
+    <h1 class="title">gimptopia</h1>
     <button class="pixel-shit-button" onclick="fetchSlurs()">the</button>
     <p id="message"></p>
 </div>
