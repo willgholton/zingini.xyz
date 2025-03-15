@@ -6,6 +6,7 @@
     <title>zingoonerland</title>
     <style>
         <?php
+            brurhfkfhsdlfhsdjklfhlsd
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/styles.css');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
