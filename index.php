@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<?php
-
-function fetch_file($url) {
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    $content = curl_exec($ch);
-    if (curl_errno($ch)) {
-        return 'curl error: ' . curl_error($ch);
-    }
-    curl_close($ch);
-    return $content;
-}
-
-$js_content = fetch_file('https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/script.js');
-$css_content = fetch_file('https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/styles.css');
-?>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zingoonerland</title>
     <style>
-        <?php echo $css_content; ?>
+        <?php
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/styles.css');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $content = curl_exec($ch);
+            if(curl_errno($ch)) {
+                echo 'curl error: ' . curl_error($ch);
+            } else {
+                echo $content;
+            }
+            curl_close($ch);
+        ?>
     </style>
     <script defer>
-        <?php echo $js_content; ?>
+        <?php
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/script.js');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $content = curl_exec($ch);
+            if(curl_errno($ch)) {
+                echo 'curl error: ' . curl_error($ch);
+            } else {
+                echo $content;
+            }
+            curl_close($ch);
+        ?>
     </script>
 </head>
 <body>
