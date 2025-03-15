@@ -17,8 +17,8 @@
 
 
 <div id="home" class="section active">
-    <h1 class="title">gimptopia</h1>
-    <button class="pixel-shit-button" onclick="fetchSlurs()">the</button>
+    <h1 class="title">zingini</h1>
+    <button class="pixel-shit-button" onclick="fetchSlurs()">the button</button>
     <p id="message"></p>
 </div>
 
