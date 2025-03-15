@@ -4,34 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zingoonerland</title>
-    <style>
-        <?php
-            brurhfkfhsdlfhsdjklfhlsd
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/styles.css');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $content = curl_exec($ch);
-            if(curl_errno($ch)) {
-                echo 'curl error: ' . curl_error($ch);
-            } else {
-                echo $content;
-            }
-            curl_close($ch);
-        ?>
-    </style>
-    <script defer>
-        <?php
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/script.js');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $content = curl_exec($ch);
-            if(curl_errno($ch)) {
-                echo 'curl error: ' . curl_error($ch);
-            } else {
-                echo $content;
-            }
-            curl_close($ch);
-        ?>
+    <script>
+        // Function to dynamically load a CSS file
+        function loadCSS(url) {
+            let link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = url;
+            document.head.appendChild(link);
+        }
+
+        // Function to dynamically load a JavaScript file
+        function loadScript(url) {
+            let script = document.createElement("script");
+            script.src = url;
+            script.defer = true;
+            document.body.appendChild(script);
+        }
+
+        // Load CSS and JS from GitHub RAW
+        document.addEventListener("DOMContentLoaded", function () {
+            loadCSS("https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/styles.css");
+            loadScript("https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/script.js");
+        });
     </script>
 </head>
 <body>
