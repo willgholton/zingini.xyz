@@ -2,6 +2,7 @@
 <html lang="en">
     
 <?php
+echo "hello";
 function fetch_file($url) {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -26,7 +27,6 @@ $css_content = fetch_file('https://raw.githubusercontent.com/willgholton/zingini
         <?php echo $css_content; ?>
     </style>
     <script defer>
-        <?php echo "echo is working"; ?>
         <?php echo $js_content; ?>
     </script>
 </head>
