@@ -13,22 +13,22 @@ document.addEventListener("DOMContentLoaded", function () {
         drawBackground();
     }
 
-function drawBackground() {
-    ctx.fillStyle = "#000";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    const shades = ["#FFFFBB", "#FFFFCC", "#FFFFDD", "#FFFFEE", "#FFFFFF"];
-
-    for (let i = 0; i < 500; i++) {
-        let x = Math.random() * canvas.width;
-        let y = Math.random() * canvas.height;
-        let size = Math.random() * 3;
-        let randomColor = shades[Math.floor(Math.random() * shades.length)];
-        
-        ctx.fillStyle = randomColor;
-        ctx.fillRect(x, y, size, size);
+    function drawBackground() {
+        ctx.fillStyle = "#000";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+        const shades = ["#FFFFBB", "#FFFFCC", "#FFFFDD", "#FFFFEE", "#FFFFFF"];
+    
+        for (let i = 0; i < 500; i++) {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height;
+            let size = Math.random() * 3;
+            let randomColor = shades[Math.floor(Math.random() * shades.length)];
+            
+            ctx.fillStyle = randomColor;
+            ctx.fillRect(x, y, size, size);
+        }
     }
-}
 
 
     window.addEventListener("resize", resizeCanvas);
