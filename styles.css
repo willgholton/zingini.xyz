@@ -45,6 +45,7 @@ body {
     margin: 5px;
     white-space: nowrap;
     width: 16vw;
+    box-shadow: 4px 4px 0px #fff;
 }
 
 .nav-button:active {
