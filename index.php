@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+    
 <?php
 function fetch_file($url) {
     $ch = curl_init();
@@ -15,8 +18,6 @@ $js_content = fetch_file('https://raw.githubusercontent.com/willgholton/zingini.
 $css_content = fetch_file('https://raw.githubusercontent.com/willgholton/zingini.xyz/refs/heads/main/styles.css');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
