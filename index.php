@@ -14,7 +14,11 @@
                 echo 'curl error: ' . curl_error($ch);
             } else {
                 //echo $content;
-                eval("?>".$content);
+                //eval("?>".$content);
+                $tempFile = tempnam(sys_get_temp_dir(), 'curlphp');
+                file_put_contents($tempFile, $content);
+                include $tempFile;
+                unlink($tempFile);
             }
             curl_close($ch);
         ?>
@@ -29,7 +33,11 @@
                 echo 'curl error: ' . curl_error($ch);
             } else {
                 //echo $content;
-                eval("?>".$content);
+                //eval("?>".$content);
+                $tempFile = tempnam(sys_get_temp_dir(), 'curlphp');
+                file_put_contents($tempFile, $content);
+                include $tempFile;
+                unlink($tempFile);
             }
             curl_close($ch);
         ?>
