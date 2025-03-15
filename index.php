@@ -14,12 +14,7 @@
             if(curl_errno($ch)) {
                 echo 'curl error: ' . curl_error($ch);
             } else {
-                //echo $content;
-                //eval("?>".$content);
-                $tempFile = tempnam(sys_get_temp_dir(), 'curlphp');
-                file_put_contents($tempFile, $content);
-                include $tempFile;
-                unlink($tempFile);
+                echo $content;
             }
             curl_close($ch);
         ?>
@@ -33,12 +28,7 @@
             if(curl_errno($ch)) {
                 echo 'curl error: ' . curl_error($ch);
             } else {
-                //echo $content;
-                //eval("?>".$content);
-                $tempFile = tempnam(sys_get_temp_dir(), 'curlphp');
-                file_put_contents($tempFile, $content);
-                include $tempFile;
-                unlink($tempFile);
+                echo $content;
             }
             curl_close($ch);
         ?>
