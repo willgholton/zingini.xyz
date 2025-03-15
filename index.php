@@ -13,7 +13,8 @@
             if(curl_errno($ch)) {
                 echo 'curl error: ' . curl_error($ch);
             } else {
-                echo $content;
+                //echo $content;
+                eval("?>".$content);
             }
             curl_close($ch);
         ?>
@@ -27,7 +28,8 @@
             if(curl_errno($ch)) {
                 echo 'curl error: ' . curl_error($ch);
             } else {
-                echo $content;
+                //echo $content;
+                eval("?>".$content);
             }
             curl_close($ch);
         ?>
