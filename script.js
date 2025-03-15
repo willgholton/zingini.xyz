@@ -1,8 +1,3 @@
-const link = document.createElement("link");
-link.rel = "stylesheet";
-link.href = "styles.css?v=" + new Date().getTime();
-document.head.appendChild(link);
-
 document.addEventListener("DOMContentLoaded", function () {
     const canvas = document.getElementById("backgroundCanvas");
     const ctx = canvas.getContext("2d");
