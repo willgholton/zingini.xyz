@@ -33,6 +33,7 @@ body {
 
 #player audio {
     width: 150px;
+    font-family: 'PressStart2P', sans-serif;
     filter: hue-rotate(20deg) contrast(1.2);
 }
 
