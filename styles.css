@@ -28,23 +28,13 @@ body {
     z-index: 20;
     background: rgba(255, 174, 66, 0.8);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 4px 4px 0px white;
 }
 
 #player audio {
     width: 150px;
     filter: hue-rotate(20deg) contrast(1.2);
-}
-
-#play-pause {
-    background: black;
-    color: white;
-    border: 2px solid white;
-    padding: 5px 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-family: 'PressStart2P', sans-serif;
 }
 
 .navbar {
