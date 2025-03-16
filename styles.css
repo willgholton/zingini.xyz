@@ -33,6 +33,7 @@ body {
 }
 
 #player audio {
+    border-radius: 15px;
     width: 150px;
     filter: hue-rotate(20deg) contrast(1.2);
 }
