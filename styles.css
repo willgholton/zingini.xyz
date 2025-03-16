@@ -21,6 +21,22 @@ body {
     overflow: hidden;
 }
 
+#player {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 20;
+    background: rgba(255, 174, 66, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0px white;
+}
+
+#player audio {
+    width: 150px;
+    filter: hue-rotate(20deg) contrast(1.2);
+}
+
 .navbar {
     position: absolute;
     top: 10px;
