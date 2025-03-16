@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    audioPlayPause();
+    
     const canvas = document.getElementById("backgroundCanvas");
     const ctx = canvas.getContext("2d");
 
@@ -29,6 +31,21 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 });
+
+function audioPlayPause() {
+    const audio = document.getElementById("player");
+    const playPauseBtn = document.getElementById("play-pause");
+
+    playPauseBtn.addEventListener("click", () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.textContent = "⏸";
+        } else {
+            audio.pause();
+            playPauseBtn.textContent = "▶";
+        }
+    });
+}
 
 function fetchSlurs() {
     console.log("die");
