@@ -26,14 +26,14 @@ body {
     top: 10px;
     left: 10px;
     z-index: 20;
-    background: rgba(255, 174, 66, 0.8);
-    padding: 10px;
+    background: rgba(255, 174, 66, 0.95);
+    padding: 8px;
     border-radius: 15px;
     box-shadow: 4px 4px 0px white;
 }
 
 #player audio {
-    border-radius: 15px;
+    border-radius: 10px;
     width: 150px;
     filter: hue-rotate(20deg) contrast(1.2);
 }
