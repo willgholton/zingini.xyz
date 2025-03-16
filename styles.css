@@ -26,8 +26,8 @@ body {
     top: 10px;
     left: 10px;
     z-index: 20;
-    background: rgba(255, 174, 66, 0.95);
-    padding: 8px;
+    background: rgba(255, 255, 255 0.95);
+    padding: 4px;
     box-shadow: 4px 4px 0px white;
 }
 
