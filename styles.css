@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: dimgrey;
+    background-color: black;
     color: #ffae42;
     font-family: 'PressStart2P', sans-serif;
     text-align: center;
@@ -34,7 +34,6 @@ body {
 #player audio {
     width: 150px;
     font-family: 'PressStart2P', sans-serif;
-    filter: hue-rotate(20deg) contrast(1.2);
 }
 
 .navbar {
