@@ -36,7 +36,7 @@ function fetchSlurs() {
                 "...Meow",
                 "Get zingooned",
                 "avada kedavra",
-                "You will be burned alive",
+                "does this shit work"
             ];
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
             document.getElementById("message").textContent = randomMessage;
