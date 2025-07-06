@@ -94,8 +94,8 @@
     
     .contact-panel {
         min-width: clamp(200px, 25vw, 250px);
-        right: 0;
-        top: calc(clamp(20px, 4vw, 30px) + clamp(45px, 7vw, 55px) + 10px);
+        right: clamp(10px, 2vw, 15px);
+        top: calc(clamp(10px, 2vw, 15px) + clamp(45px, 7vw, 55px) + 10px);
     }
     
     .contact-toggle {
@@ -183,8 +183,8 @@
     
     .contact-panel {
         min-width: clamp(180px, 20vw, 200px);
-        right: 0;
-        top: calc(clamp(20px, 4vw, 30px) + clamp(40px, 6vw, 50px) + 10px);
+        right: clamp(10px, 2vw, 15px);
+        top: calc(clamp(10px, 2vw, 15px) + clamp(40px, 6vw, 50px) + 10px);
     }
     
     .contact-toggle {
