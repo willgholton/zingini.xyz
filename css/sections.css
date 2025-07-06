@@ -188,6 +188,7 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .gallery-item:hover {
