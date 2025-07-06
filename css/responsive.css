@@ -1,0 +1,302 @@
+@media (max-width: 1200px) {
+    .section {
+        padding: clamp(15px, 4vw, 30px);
+    }
+    
+    .title {
+        font-size: clamp(1.8rem, 7vw, 3rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-button, .pixel-shit-button {
+        font-size: clamp(0.6rem, 2vw, 0.9rem);
+        padding: clamp(6px, 1.2vw, 10px) clamp(10px, 2vw, 16px);
+        min-width: clamp(70px, 12vw, 100px);
+    }
+    
+    .section {
+        padding: clamp(10px, 3vw, 20px);
+    }
+    
+    .title {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+    
+    .section h1 {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+    }
+    
+    .navbar {
+        gap: clamp(6px, 1.2vw, 12px);
+        padding: clamp(4px, 0.8vw, 8px);
+    }
+    
+    .home-features {
+        gap: clamp(15px, 3vw, 25px);
+    }
+    
+    .feature {
+        min-width: clamp(120px, 18vw, 180px);
+    }
+    
+    .cat-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: clamp(10px, 2vw, 20px);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: clamp(15px, 3vw, 25px);
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: clamp(10px, 2vw, 20px);
+    }
+    
+    .blog-content {
+        padding: clamp(15px, 3vw, 25px);
+    }
+    
+    .blog-posts {
+        gap: clamp(15px, 3vw, 25px);
+    }
+    
+    .blog-post {
+        padding: clamp(15px, 3vw, 25px);
+    }
+    
+    .blog-actions {
+        flex-direction: column;
+        gap: clamp(6px, 1.2vw, 10px);
+    }
+    
+    .gallery-actions {
+        position: static;
+        opacity: 1;
+        margin-top: clamp(10px, 2vw, 15px);
+        justify-content: center;
+    }
+    
+    .custom-audio-player {
+        min-width: clamp(200px, 30vw, 280px);
+        transform: scale(clamp(0.7, 0.9vw, 0.9));
+    }
+    
+    .player-controls {
+        gap: clamp(6px, 1.2vw, 10px);
+    }
+    
+    .volume-control {
+        display: none;
+    }
+    
+    .contact-panel {
+        min-width: clamp(200px, 25vw, 250px);
+        right: -50px;
+    }
+    
+    .contact-toggle {
+        width: clamp(45px, 7vw, 55px);
+        height: clamp(45px, 7vw, 55px);
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+    }
+    
+    .section h1 {
+        font-size: clamp(1rem, 3.5vw, 1.5rem);
+    }
+    
+    .nav-button, .pixel-shit-button {
+        font-size: clamp(0.5rem, 1.8vw, 0.7rem);
+        padding: clamp(5px, 1vw, 8px) clamp(8px, 1.5vw, 12px);
+        min-width: clamp(60px, 10vw, 80px);
+    }
+    
+    .home-features {
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(10px, 2vw, 15px);
+    }
+    
+    .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(8px, 1.5vw, 12px);
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: clamp(10px, 2vw, 15px);
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        gap: clamp(5px, 1vw, 8px);
+    }
+    
+    .blog-content {
+        padding: clamp(10px, 2vw, 15px);
+    }
+    
+    .blog-post {
+        padding: clamp(10px, 2vw, 15px);
+    }
+    
+    .blog-post h3 {
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+    }
+    
+    .blog-post p {
+        font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+    
+    .blog-button,
+    .gallery-button {
+        font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+        padding: clamp(6px, 1.2vw, 10px) clamp(10px, 2vw, 16px);
+    }
+    
+    .gallery-stats {
+        flex-direction: column;
+        gap: clamp(5px, 1vw, 8px);
+    }
+    
+    .custom-audio-player {
+        min-width: clamp(180px, 25vw, 220px);
+        transform: scale(clamp(0.6, 0.8vw, 0.8));
+    }
+    
+    .time-display {
+        font-size: clamp(0.5rem, 1.2vw, 0.7rem);
+    }
+    
+    .track-title {
+        font-size: clamp(0.5rem, 1.2vw, 0.7rem);
+    }
+    
+    .contact-panel {
+        min-width: clamp(180px, 20vw, 200px);
+        right: -30px;
+    }
+    
+    .contact-toggle {
+        width: clamp(40px, 6vw, 50px);
+        height: clamp(40px, 6vw, 50px);
+    }
+    
+    .contact-detail .contact-text {
+        font-size: clamp(0.5rem, 1.2vw, 0.7rem);
+    }
+}
+
+@media (prefers-contrast: high) {
+    body {
+        background: #000;
+        color: #fff;
+    }
+    
+    .nav-button, .pixel-shit-button {
+        background: #fff;
+        color: #000;
+        border: 3px solid #fff;
+    }
+    
+    .title {
+        color: #fff;
+        text-shadow: 0 0 10px #fff;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .particle {
+        animation: none;
+    }
+    
+    .feature-icon {
+        animation: none;
+    }
+    
+    .cat-item {
+        animation: none;
+    }
+    
+    .pixel-art {
+        animation: none;
+    }
+    
+    .title {
+        animation: none;
+    }
+    
+    .subtitle {
+        animation: none;
+    }
+    
+    .section h1 {
+        animation: none;
+    }
+}
+
+@media screen and (min-resolution: 144dpi) {
+    .nav-button, .pixel-shit-button {
+        border-width: 1px;
+    }
+    
+    .title {
+        font-weight: 600;
+    }
+    
+    .section h1 {
+        font-weight: 600;
+    }
+}
+
+@media screen and (min-resolution: 192dpi) {
+    body {
+        font-size: clamp(14px, 1.2vw, 18px);
+    }
+    
+    .section {
+        padding: clamp(25px, 6vw, 50px);
+    }
+    
+    .navbar {
+        padding: clamp(6px, 1.2vw, 12px);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .section {
+        padding: clamp(8px, 2vw, 12px);
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: clamp(4px, 1vw, 6px);
+    }
+    
+    .nav-button, .pixel-shit-button {
+        min-width: clamp(50px, 8vw, 70px);
+        font-size: clamp(0.4rem, 1.5vw, 0.6rem);
+    }
+    
+    .title {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+    }
+    
+    .section h1 {
+        font-size: clamp(0.8rem, 3vw, 1.2rem);
+    }
+} 

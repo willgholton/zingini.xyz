@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "id": "blog-1",
+      "title": "Temporary Blog",
+      "excerpt": "Testing some stuff",
+      "content": "This sucks",
+      "date": "2025-07-06",
+      "tags": ["homosexual tendencies"],
+      "readTime": "8 hour read"
+    }
+  ]
+} 

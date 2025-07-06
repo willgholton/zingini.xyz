@@ -3,40 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zingoonerland</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>zingini.xyz</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/audio-player.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script defer src="js/typewriter.js"></script>
+    <script defer src="js/audio-player.js"></script>
+    <script defer src="js/background.js"></script>
+    <script defer src="js/navigation.js"></script>
+    <script defer src="js/main.js"></script>
+    <meta name="description" content="zingini.xyz and such">
 </head>
 <body>
 <canvas id="backgroundCanvas"></canvas>
 
 <div id="player">
-    <audio controls autoplay loop>
-        <source src="https://cdn.jsdelivr.net/gh/willgholton/zingini.xyz/music.mp3" type="audio/mpeg">
+    <div class="custom-audio-player">
+        <div class="player-controls">
+            <button class="play-pause-btn" id="playPauseBtn">▶️</button>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-display">
+                    <span id="currentTime">0:00</span>
+                    <span>/</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+            </div>
+            <div class="volume-control">
+                <button class="volume-btn" id="volumeBtn">🔊</button>
+                <div class="volume-slider" id="volumeSlider">
+                    <div class="volume-fill" id="volumeFill"></div>
+                </div>
+            </div>
+        </div>
+        <div class="player-info">
+            <span class="track-title">epic tunes</span>
+        </div>
+    </div>
+    <audio id="audioElement" preload="metadata">
+        <source src="assets/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 </div>
     
 <nav class="navbar">
-    <button class="nav-button" onclick="zoomToSection('home')">home</button>
-    <button class="nav-button" onclick="zoomToSection('about')">about</button>
-    <button class="nav-button" onclick="zoomToSection('meow')">meow</button>
+    <button class="nav-button" onclick="zoomToSection('home')">🏠 home</button>
+    <button class="nav-button" onclick="zoomToSection('blog')">📝 blog</button>
+    <button class="nav-button" onclick="zoomToSection('meow')">🐱 meow</button>
+    <button class="nav-button" onclick="zoomToSection('gallery')">🎨 gallery</button>
 </nav>
 
-
 <div id="home" class="section active">
-    <h1 class="title">zingoonernet</h1>
-    <button class="pixel-shit-button" onclick="fetchSlurs()">the</button>
+    <h1 class="title">zingini.xyz</h1>
+    <p class="subtitle">land of the evil</p>
+    <button class="pixel-shit-button" onclick="fetchSlurs()">🎮 the button</button>
     <p id="message"></p>
+    <div class="home-features">
+        <div class="feature">
+            <span class="feature-icon">🥶</span>
+            <span class="feature-text">sillying around</span>
+        </div>
+        <div class="feature">
+            <span class="feature-icon">🎵</span>
+            <span class="feature-text">epic tunes</span>
+        </div>
+        <div class="feature">
+            <span class="feature-icon">👹</span>
+            <span class="feature-text">stupid shit</span>
+        </div>
+    </div>
+    
+    <div class="keyboard-hint">
+        <p>💡 use keys 1-4 to navigate</p>
+    </div>
 </div>
 
-<div id="about" class="section hidden">
-    <h1 style="color: red">fuck off</h1>
-    <p></p>
+<div id="blog" class="section hidden">
+    <h1>Blog</h1>
+    <div class="blog-content">
+        <p>Welcome to my shitshow where I talk about shit</p>
+        
+        <div class="blog-controls">
+            <button class="pixel-shit-button" onclick="loadRandomPost()">🎲 Random Post</button>
+            <button class="pixel-shit-button" onclick="shareBlog()">📤 Share Blog</button>
+        </div>
+        
+        <div class="blog-posts" id="blogPosts">
+            <div class="loading-posts">
+                <p>📝 Loading blog posts...</p>
+            </div>
+        </div>
+        
+        <p class="blog-footer">More shit coming soon</p>
+    </div>
 </div>
 
 <div id="meow" class="section hidden">
-    <h1 style="color: pink">meow</h1>
-    <p></p>
+    <h1>Meow Zone</h1>
+    <div class="meow-content">
+        <p>Welcome to the meow zone init</p>
+        <div class="cat-grid">
+            <div class="cat-item">😺</div>
+            <div class="cat-item">😸</div>
+            <div class="cat-item">😹</div>
+            <div class="cat-item">😻</div>
+            <div class="cat-item">😼</div>
+        </div>
+        <p>Meow and shit say the cats</p>
+        <button class="pixel-shit-button" onclick="meowAction()">🐱 Pet the cats</button>
+        <p id="meowMessage"></p>
+    </div>
+</div>
+
+<div id="gallery" class="section hidden">
+    <h1>Gallery</h1>
+    <div class="gallery-content">
+        <p>Behold the shittery</p>
+        
+        <div class="gallery-controls">
+            <button class="pixel-shit-button" onclick="shuffleGallery()">Shuffle</button>
+            <button class="pixel-shit-button" onclick="toggleGalleryView()">Toggle View</button>
+            <button class="pixel-shit-button" onclick="downloadGallery()">💾 Download All</button>
+        </div>
+        
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="gallery-item" onclick="viewArtwork(this)">
+                <div class="pixel-art">🤤</div>
+                <p>the 1</p>
+                <div class="gallery-actions">
+                    <button class="gallery-button" onclick="shareArtwork(this, event)">📤</button>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="viewArtwork(this)">
+                <div class="pixel-art">🫠</div>
+                <p>the 2</p>
+                <div class="gallery-actions">
+                    <button class="gallery-button" onclick="shareArtwork(this, event)">📤</button>
+                </div>
+            </div>
+            <div class="gallery-item" onclick="viewArtwork(this)">
+                <div class="pixel-art">👾</div>
+                <p>the 3</p>
+                <div class="gallery-actions">
+                    <button class="gallery-button" onclick="shareArtwork(this, event)">📤</button>
+                </div>
+            </div>
+        </div>
+        
+        <p class="gallery-footer">More shit coming soon</p>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>© 2025 zingini.xyz - Made with blood</p>
+</footer>
+
+<div class="theme-toggle-bottom" onclick="toggleGlobalTheme()" id="themeToggle">
+    <span class="theme-icon">🥸</span>
+    <span class="theme-label">Theme</span>
+</div>
+
+<div class="contact-corner">
+    <div class="contact-toggle" onclick="toggleContact()">📞</div>
+    <div class="contact-panel" id="contactPanel">
+        <div class="contact-header">
+            <span>Get in Touch</span>
+            <button class="close-contact" onclick="toggleContact()">×</button>
+        </div>
+        <div class="contact-details">
+            <div class="contact-detail">
+                <span class="contact-icon"></span>
+                <span class="contact-text">admin@zingini.xyz</span>
+            </div>
+            <div class="contact-detail">
+                <span class="contact-icon">📧</span>
+                <span class="contact-text">admin@zingini.xyz</span>
+            </div>
+            <div class="contact-detail">
+                <span class="contact-icon">🎮</span>
+                <span class="contact-text">zingini52</span>
+            </div>
+        </div>
+        <button class="pixel-shit-button" onclick="contactAction()">Send Message</button>
+    </div>
 </div>
 </body>
 </html>
