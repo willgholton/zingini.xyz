@@ -1,6 +1,6 @@
 let blogData = [];
 
-function fetchSlurs() {
+function displayRandomGreeting() {
     console.log("die");
     const messages = [
         "hello",
@@ -13,7 +13,7 @@ function fetchSlurs() {
 }
 
 function zoomToSection(sectionId) {
-    console.log("FUCK");
+    console.log("fuck");
     const currentSection = document.querySelector(".active");
     const targetSection = document.getElementById(sectionId);
 
@@ -28,7 +28,7 @@ function zoomToSection(sectionId) {
     }
 }
 
-function meowAction() {
+function triggerCatAnimation() {
     const meowMessages = [
         "meowoowowowowow",
         "meow",
@@ -61,21 +61,21 @@ function meowAction() {
 
 async function loadBlogData() {
     try {
-        console.log('Attempting to load blog-data.json...');
+        console.log('loading blog data...');
         const response = await fetch('data/blog-data.json');
-        console.log('Response status:', response.status);
+        console.log('response status:', response.status);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const data = await response.json();
-        console.log('Blog data loaded successfully:', data);
+        console.log('blog data loaded:', data);
         blogData = data.posts;
         renderBlogPosts();
     } catch (error) {
         console.error('Error loading blog data:', error);
-        console.log('Using fallback blog data...');
+        console.log('using fallback data...');
         
         try {
             const xhr = new XMLHttpRequest();
@@ -83,7 +83,7 @@ async function loadBlogData() {
             xhr.send();
             if (xhr.status === 200) {
                 const data = JSON.parse(xhr.responseText);
-                console.log('Blog data loaded via XHR:', data);
+                console.log('blog data loaded via xhr:', data);
                 blogData = data.posts;
                 renderBlogPosts();
                 return;
@@ -143,7 +143,7 @@ function renderBlogPosts() {
     });
 }
 
-function loadRandomPost() {
+function displayRandomBlogPost() {
     if (blogData.length === 0) {
         typewriterManager.startTypewriter("message", "📝 Loading blog posts...", 30);
         setTimeout(() => {
@@ -173,11 +173,11 @@ function loadRandomPost() {
     }
 }
 
-function toggleBlogTheme() {
-    toggleGlobalTheme();
+function cycleTheme() {
+    cycleGlobalTheme();
 }
 
-function toggleGlobalTheme() {
+function cycleGlobalTheme() {
     const themes = ['default', 'dark', 'cyber', 'retro'];
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'default';
     const currentIndex = themes.indexOf(currentTheme);
@@ -400,7 +400,7 @@ document.addEventListener('keydown', function(e) {
             break;
         case ' ':
             e.preventDefault();
-            fetchSlurs();
+            displayRandomGreeting();
             break;
     }
 });

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const audioPlayer = new CustomAudioPlayer();
+    const audioPlayer = new AudioPlayer();
     
     loadBlogData();
     

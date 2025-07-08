@@ -1,4 +1,4 @@
-class CustomAudioPlayer {
+class AudioPlayer {
     constructor() {
         this.audio = document.getElementById('audioElement');
         this.playPauseBtn = document.getElementById('playPauseBtn');
@@ -45,7 +45,7 @@ class CustomAudioPlayer {
             this.audio.pause();
         } else {
             this.audio.play().catch(error => {
-                console.log('Playback failed:', error);
+                console.log('playback failed');
             });
         }
     }
