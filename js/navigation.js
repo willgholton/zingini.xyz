@@ -261,48 +261,6 @@ function readMore(button) {
     }
 }
 
-function shuffleGallery() {
-    const galleryGrid = document.getElementById('galleryGrid');
-    const items = Array.from(galleryGrid.children);
-    
-    for (let i = items.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        galleryGrid.appendChild(items[j]);
-    }
-    
-    typewriterManager.startTypewriter("message", "🔀 Gallery shuffled! Fresh perspective!", 30);
-    
-    setTimeout(() => {
-        const messageElement = document.getElementById("message");
-        messageElement.classList.remove("visible");
-    }, 3000);
-}
-
-function toggleGalleryView() {
-    const galleryGrid = document.getElementById('galleryGrid');
-    const currentView = galleryGrid.getAttribute('data-view') || 'grid';
-    const newView = currentView === 'grid' ? 'list' : 'grid';
-    
-    galleryGrid.setAttribute('data-view', newView);
-    
-    if (newView === 'list') {
-        galleryGrid.style.display = 'block';
-        galleryGrid.style.gridTemplateColumns = '1fr';
-        galleryGrid.style.gap = '20px';
-    } else {
-        galleryGrid.style.display = 'grid';
-        galleryGrid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(200px, 1fr))';
-        galleryGrid.style.gap = '20px';
-    }
-    
-    typewriterManager.startTypewriter("message", `👁️ Gallery view: ${newView} mode!`, 30);
-    
-    setTimeout(() => {
-        const messageElement = document.getElementById("message");
-        messageElement.classList.remove("visible");
-    }, 3000);
-}
-
 function downloadGallery() {
     typewriterManager.startTypewriter("message", "💾 Gallery download started! (Simulated)", 30);
 

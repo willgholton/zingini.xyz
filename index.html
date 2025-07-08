@@ -24,15 +24,17 @@
 <div id="player">
     <div class="custom-audio-player">
         <div class="player-controls">
-            <button class="play-pause-btn" id="playPauseBtn">▶️</button>
-            <div class="progress-container">
-                <div class="progress-bar" id="progressBar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
-                <div class="time-display">
-                    <span id="currentTime">0:00</span>
-                    <span>/</span>
-                    <span id="totalTime">0:00</span>
+            <div class="playback-row">
+                <button class="play-pause-btn" id="playPauseBtn">▶️</button>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span>
+                        <span>/</span>
+                        <span id="totalTime">0:00</span>
+                    </div>
                 </div>
             </div>
             <div class="volume-control">
@@ -41,9 +43,6 @@
                     <div class="volume-fill" id="volumeFill"></div>
                 </div>
             </div>
-        </div>
-        <div class="player-info">
-            <span class="track-title">epic tunes</span>
         </div>
     </div>
     <audio id="audioElement" preload="metadata">
@@ -127,8 +126,6 @@
         <p>Behold the shittery</p>
         
         <div class="gallery-controls">
-            <button class="pixel-shit-button" onclick="shuffleGallery()">Shuffle</button>
-            <button class="pixel-shit-button" onclick="toggleGalleryView()">Toggle View</button>
             <button class="pixel-shit-button" onclick="downloadGallery()">💾 Download All</button>
         </div>
         

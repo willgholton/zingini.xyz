@@ -77,6 +77,7 @@
     transition: all 0.3s ease;
     cursor: pointer;
     min-width: clamp(150px, 20vw, 200px);
+    animation: featureFloat 5s ease-in-out infinite;
 }
 
 .feature:hover {
@@ -98,6 +99,21 @@
     }
     50% {
         transform: translateY(-10px);
+    }
+}
+
+@keyframes featureFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-4px) rotate(-1deg);
+    }
+    75% {
+        transform: translateY(-12px) rotate(0.5deg);
     }
 }
 
@@ -193,11 +209,15 @@
     position: relative;
     overflow: hidden;
     text-align: center;
+    animation: galleryFloat 6s ease-in-out infinite;
 }
 
 .gallery-item:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px var(--shadow-color);
+    box-shadow: 
+        0 15px 40px var(--shadow-color),
+        0 0 25px rgba(var(--primary-color-rgb), 0.4),
+        0 0 50px rgba(var(--primary-color-rgb), 0.2);
     background: rgba(255, 255, 255, 0.15);
 }
 
@@ -220,6 +240,18 @@
     }
     75% {
         transform: rotate(2deg) scale(1.05);
+    }
+}
+
+@keyframes galleryFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-6px) rotate(0.5deg);
+    }
+    66% {
+        transform: translateY(-3px) rotate(-0.5deg);
     }
 }
 
@@ -252,7 +284,7 @@
 }
 
 .gallery-button {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.7) 0%, rgba(var(--secondary-color-rgb), 0.7) 100%);
     border: 2px solid var(--border-color);
     border-radius: 50%;
     width: clamp(35px, 6vw, 40px);
@@ -266,6 +298,7 @@
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 8px var(--shadow-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .gallery-button::before {
@@ -285,7 +318,10 @@
 
 .gallery-button:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 12px var(--shadow-color);
+    box-shadow: 
+        0 6px 12px var(--shadow-color),
+        0 0 20px rgba(var(--primary-color-rgb), 0.6),
+        0 0 40px rgba(var(--primary-color-rgb), 0.3);
 }
 
 .gallery-button:active {

@@ -11,9 +11,9 @@
 }
 
 .custom-audio-player {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    padding: clamp(8px, 1.5vw, 12px);
-    border-radius: clamp(8px, 1.5vw, 12px);
+    background: transparent;
+    padding: clamp(8px, 1.5vw, 12px) clamp(10px, 2vw, 15px) clamp(4px, 0.8vw, 6px) clamp(8px, 1.5vw, 12px);
+    border-radius: clamp(10px, 2vw, 15px);
     box-shadow: 
         0 8px 32px var(--shadow-color),
         0 4px 16px rgba(0, 0, 0, 0.2),
@@ -22,11 +22,25 @@
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     transform: scale(clamp(0.8, 1vw, 1));
-    min-width: clamp(250px, 35vw, 350px);
+    min-width: clamp(180px, 25vw, 250px);
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-audio-player::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.6) 0%, rgba(var(--secondary-color-rgb), 0.6) 100%);
+    border-radius: inherit;
+    z-index: -1;
 }
 
 .custom-audio-player:hover {
-    transform: translateY(-2px) scale(clamp(0.8, 1vw, 1));
+    transform: translateY(-3px) scale(1.05);
     box-shadow: 
         0 12px 40px var(--shadow-color),
         0 6px 20px rgba(0, 0, 0, 0.3),
@@ -35,9 +49,15 @@
 
 .player-controls {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: clamp(8px, 1.5vw, 12px);
     margin-bottom: clamp(5px, 1vw, 8px);
+}
+
+.playback-row {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 1.5vw, 12px);
 }
 
 .play-pause-btn {
@@ -59,10 +79,19 @@
 .play-pause-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
+    box-shadow: 
+        0 0 15px rgba(var(--primary-color-rgb), 0.8),
+        0 0 30px rgba(var(--primary-color-rgb), 0.4);
 }
 
 .play-pause-btn:active {
     transform: scale(1.05);
+}
+
+.playback-controls {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 1.5vw, 12px);
 }
 
 .progress-container {
@@ -74,9 +103,9 @@
 
 .progress-bar {
     width: 100%;
-    height: clamp(6px, 1vw, 8px);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: clamp(3px, 0.5vw, 4px);
+    height: clamp(8px, 1.5vw, 12px);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: clamp(4px, 0.8vw, 6px);
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -122,45 +151,50 @@
 .volume-control {
     position: relative;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: clamp(5px, 1vw, 8px);
+    gap: clamp(8px, 1.5vw, 12px);
+    justify-content: flex-start;
 }
 
 .volume-btn {
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    width: clamp(30px, 5vw, 35px);
-    height: clamp(30px, 5vw, 35px);
+    width: clamp(35px, 6vw, 40px);
+    height: clamp(35px, 6vw, 40px);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-size: clamp(1rem, 2vw, 1.2rem);
     transition: all 0.3s ease;
     color: white;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
 .volume-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
+    box-shadow: 
+        0 0 15px rgba(var(--primary-color-rgb), 0.8),
+        0 0 30px rgba(var(--primary-color-rgb), 0.4);
 }
 
 .volume-slider {
     width: clamp(40px, 8vw, 60px);
-    height: clamp(4px, 0.8vw, 6px);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: clamp(2px, 0.4vw, 3px);
+    height: clamp(8px, 1.5vw, 12px);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: clamp(4px, 0.8vw, 6px);
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.volume-control:hover .volume-slider {
     opacity: 1;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
 }
 
 .volume-fill {
@@ -168,11 +202,13 @@
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 1));
     border-radius: clamp(2px, 0.4vw, 3px);
     transition: width 0.1s ease;
+    position: absolute;
+    left: 0;
 }
 
 .player-info {
     text-align: center;
-    margin-top: clamp(5px, 1vw, 8px);
+    margin-top: clamp(2px, 0.5vw, 4px);
 }
 
 .track-title {

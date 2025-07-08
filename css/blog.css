@@ -22,6 +22,7 @@
     position: relative;
     overflow: hidden;
     text-align: center;
+    animation: blogFloat 7s ease-in-out infinite;
 }
 
 .blog-post::before {
@@ -43,7 +44,10 @@
 
 .blog-post:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px var(--shadow-color);
+    box-shadow: 
+        0 15px 40px var(--shadow-color),
+        0 0 25px rgba(var(--primary-color-rgb), 0.4),
+        0 0 50px rgba(var(--primary-color-rgb), 0.2);
     background: rgba(255, 255, 255, 0.15);
 }
 
@@ -91,8 +95,8 @@
 }
 
 .blog-tag {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: black;
+    background: transparent;
+    color: var(--primary-color);
     padding: clamp(6px, 1.2vw, 10px) clamp(10px, 2vw, 14px);
     border-radius: clamp(4px, 1vw, 6px);
     font-size: clamp(0.6rem, 1.5vw, 0.8rem);
@@ -103,11 +107,28 @@
     border: 1px solid var(--border-color);
     display: inline-block;
     vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-tag::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.6) 0%, rgba(var(--secondary-color-rgb), 0.6) 100%);
+    border-radius: inherit;
+    z-index: -1;
 }
 
 .blog-tag:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px var(--shadow-color);
+    box-shadow: 
+        0 4px 8px var(--shadow-color),
+        0 0 15px rgba(var(--primary-color-rgb), 0.6),
+        0 0 30px rgba(var(--primary-color-rgb), 0.3);
 }
 
 .loading-posts {
@@ -147,18 +168,19 @@
 }
 
 .blog-button {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: black;
-    border: 2px solid var(--border-color);
+    background: linear-gradient(135deg, rgba(var(--primary-color-rgb), 0.6) 0%, rgba(var(--secondary-color-rgb), 0.6) 100%);
+    color: var(--primary-color);
+    border: none;
     padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2.5vw, 20px);
     font-size: clamp(0.7rem, 2vw, 0.9rem);
     cursor: pointer;
     font-family: 'PressStart2P', sans-serif;
-    border-radius: clamp(6px, 1vw, 8px);
+    border-radius: clamp(10px, 2vw, 15px);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 8px var(--shadow-color);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .blog-button::before {
@@ -178,7 +200,10 @@
 
 .blog-button:hover {
     transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 12px var(--shadow-color);
+    box-shadow: 
+        0 6px 12px var(--shadow-color),
+        0 0 20px rgba(var(--primary-color-rgb), 0.6),
+        0 0 40px rgba(var(--primary-color-rgb), 0.3);
 }
 
 .blog-button:active {
@@ -213,5 +238,20 @@
     }
     50% {
         transform: scale(1.05);
+    }
+}
+
+@keyframes blogFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-5px) rotate(0.3deg);
+    }
+    50% {
+        transform: translateY(-2px) rotate(-0.3deg);
+    }
+    75% {
+        transform: translateY(-8px) rotate(0.2deg);
     }
 } 
